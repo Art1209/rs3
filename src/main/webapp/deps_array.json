@@ -1,0 +1,15 @@
+[{"name":"Отдел разработки" ,
+  "avgSalary":"0" , "employeesList":[
+    {"salary":"25000","name":"Аркадий Богданов","email":"pykassagok-3823@yopmail.com"},
+    {"salary":"27000","name":"Сева Мамонтов","email":"p9643@yopmail.com"},
+    {"salary":"29000","name":"Сева Прохоров","email":"6882@yopmail.com"},
+    {"salary":"28000","name":"Альберт Муравьёв","email":"paxanarro-6443@yopmail.com"},
+    {"salary":"25000","name":"Антонин Осипов","email":"isonivepi-1411@yopmail.com"}
+  ]},{"name":"Отдел маркетинга" ,
+"avgSalary":"0" , "employeesList":[
+{"salary":"35000","name":"Аркадий Богданов","email":"pykassagok-3823@yopmail.com"},
+{"salary":"27000","name":"Сева Мамонтов","email":"p9643@yopmail.com"},
+{"salary":"29000","name":"Сева Прохоров","email":"6882@yopmail.com"},
+{"salary":"55000","name":"Альберт Муравьёв","email":"paxanarro-6443@yopmail.com"},
+{"salary":"15000","name":"Антонин Осипов","email":"isonivepi-1411@yopmail.com"}
+]}]
