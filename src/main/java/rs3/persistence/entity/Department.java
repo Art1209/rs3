@@ -35,7 +35,7 @@ public class Department {
     }
 
     @Column(name = "avgsalary")
-    private double avgSalary=0f;
+    private double avgSalary;
     public double getAvgSalary() {
         return EntityUtils.getAverageSalary(this);
     }

@@ -52,7 +52,7 @@ public class DbInitializrFromJsonImpl implements DbInitializr {
                 }
 
                 dep.setEmployeesList(employees);
-                dep.getAvgSalary();
+                dep.setAvgSalary(dep.getAvgSalary());
                 depService.editDepartment(dep);
                 deps.add(dep);
             }
