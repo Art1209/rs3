@@ -13,5 +13,6 @@
 <body>
 <h1>Department 1 : ${department1}</h1>
 <h1>Department 2 : ${department2}</h1>
+<h1>Remaining emps : ${department3}</h1>
 </body>
 </html>

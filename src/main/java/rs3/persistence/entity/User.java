@@ -3,10 +3,13 @@ package rs3.persistence.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
+@XmlRootElement
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable{
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")

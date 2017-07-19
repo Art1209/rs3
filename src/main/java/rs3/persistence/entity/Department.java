@@ -1,16 +1,21 @@
 package rs3.persistence.entity;
 
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import rs3.tools.CustomObjectEmployeeListSerializer;
 import rs3.tools.EntityUtils;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlRootElement
 @Entity
 @Table(name="department")
-public class Department {
+public class Department implements Serializable{
 
     @Id
 //    @GeneratedValue(generator = "increment")
@@ -43,6 +48,7 @@ public class Department {
         this.avgSalary = avgSalary;
     }
 
+    @JsonSerialize(using= CustomObjectEmployeeListSerializer.class)
     @OneToMany(targetEntity=Employee.class, mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Employee> employeesList=new ArrayList<>();
     public List<Employee> getEmployeesList() {

@@ -1,11 +1,18 @@
 package rs3.persistence.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import rs3.tools.CustomObjectDepartmentSerializer;
+import rs3.tools.CustomObjectEmployeeListSerializer;
+
 import javax.persistence.*;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
+@XmlRootElement
 @Entity
 @Table(name="employee")
-public class Employee{
+public class Employee implements Serializable{
 
     @Id
     @Column(name = "id", length = 6, nullable = false)
@@ -34,6 +41,7 @@ public class Employee{
         this.employeeName = name;
     }
 
+    @JsonSerialize(using= CustomObjectDepartmentSerializer.class)
     @ManyToOne
     @JoinColumn(name="department", nullable = false)
     private Department department;

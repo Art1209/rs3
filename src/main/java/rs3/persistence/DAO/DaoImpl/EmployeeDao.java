@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import rs3.persistence.DAO.DaoInterf.EmployeeDaoInterface;
+import rs3.persistence.entity.Department;
 import rs3.persistence.entity.Employee;
 
 import java.util.List;
@@ -29,7 +30,10 @@ public class EmployeeDao implements EmployeeDaoInterface {
     public void removeEmployee(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         Employee emp = (Employee) session.load(Employee.class, new Integer(id));
+        Department dep = (Department) session.load(Department.class, new Integer(emp.getDepartment().getId()));
         if(null != emp){
+            //todo можно ли так делать или есть встроенные воможности hibernate для удаления дочерних сущностей
+            dep.getEmployeesList().remove(emp);
             session.delete(emp);
         }
 

@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
 @Controller
 @RequestMapping("/Hello")
 public class HelloController {
@@ -14,4 +18,5 @@ public class HelloController {
         model.addAttribute("message", customHello==null?"Hello world":customHello);
         return "hello";
     }
+
 }

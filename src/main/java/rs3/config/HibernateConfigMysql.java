@@ -51,7 +51,7 @@ public class HibernateConfigMysql {
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        properties.setProperty("hibernate.hbm2ddl.auto", "create"); // Auto table creation during SessionFactory creates
+        properties.setProperty("hibernate.hbm2ddl.auto", "update"); // Auto table creation during SessionFactory creates
         return properties;
     }
 //    @Bean
