@@ -1,0 +1,54 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="rs3/soap"
+           targetNamespace="rs3/soap" elementFormDefault="qualified">
+
+    <xs:element name="getDepartmentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDepartmentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="department" type="tns:departmentFromXsd"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employeeFromXsd"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="departmentFromXsd">
+        <xs:sequence>
+            <xs:element name="departmentName" type="xs:string"/>
+            <xs:element name="avgSalary" type="xs:double"/>
+            <xs:element name="department_id" type="xs:int"/>
+            <xs:element name="employeesList" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="employeeFromXsd">
+        <xs:sequence>
+            <xs:element name="employeeName" type="xs:string"/>
+            <xs:element name="salary" type="xs:double"/>
+            <xs:element name="employee_id" type="xs:int"/>
+            <xs:element name="department" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

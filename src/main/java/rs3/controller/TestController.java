@@ -5,13 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import rs3.persistence.entity.Department;
-import rs3.persistence.service.interf.DepartmentService;
-import rs3.persistence.service.interf.EmployeeService;
+import rs3.persistence.service.serviceInterf.DepartmentService;
+import rs3.persistence.service.serviceInterf.EmployeeService;
 import rs3.tools.EntityUtils;
-import rs3.tools.interf.DbInitializr;
-import rs3.tools.interf.DepartmentsDataProvider;
+import rs3.tools.dbInitInterf.DbInitializr;
+import rs3.tools.dbInitInterf.DepartmentsDataProvider;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

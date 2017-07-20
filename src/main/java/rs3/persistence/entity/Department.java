@@ -2,11 +2,10 @@ package rs3.persistence.entity;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import rs3.tools.CustomObjectEmployeeListSerializer;
 import rs3.tools.EntityUtils;
+import rs3.tools.customObjectSerializer.CustomObjectEmployeeListSerializer;
 
 import javax.persistence.*;
-import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;

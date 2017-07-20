@@ -3,11 +3,10 @@ package rs3.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import rs3.persistence.entity.Department;
 import rs3.persistence.entity.Employee;
-import rs3.persistence.service.interf.DepartmentService;
-import rs3.persistence.service.interf.EmployeeService;
+import rs3.persistence.service.serviceInterf.DepartmentService;
+import rs3.persistence.service.serviceInterf.EmployeeService;
 
 import java.util.List;
 

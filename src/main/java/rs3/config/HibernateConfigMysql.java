@@ -1,6 +1,5 @@
 package rs3.config;
 
-import com.mysql.jdbc.Driver;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,14 +7,6 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import rs3.persistence.DAO.DaoImpl.DepartmentDao;
-import rs3.persistence.DAO.DaoImpl.EmployeeDao;
-import rs3.persistence.DAO.DaoInterf.DepartmentDaoInterface;
-import rs3.persistence.DAO.DaoInterf.EmployeeDaoInterface;
-import rs3.persistence.service.DaoImpl.DepartmentDaoServiceImpl;
-import rs3.persistence.service.DaoImpl.EmployeeDaoService;
-import rs3.persistence.service.interf.DepartmentService;
-import rs3.persistence.service.interf.EmployeeService;
 
 import javax.sql.DataSource;
 import java.util.Properties;
