@@ -5,9 +5,12 @@ import rs3.persistence.entity.User;
 import java.util.List;
 
 public interface UserDaoInterface {
-    void addUser();
-    void removeUser();
-    void updateUser();
+//    void addUser();
+//    void removeUser();
+//    void updateUser();
+//    List<User> getAll();
+//    User getUserById();
+    User getUserByLogin(String login);
+
     List<User> getAll();
-    User getUserById();
 }

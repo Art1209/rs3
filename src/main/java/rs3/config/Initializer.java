@@ -17,7 +17,7 @@ public class Initializer implements WebApplicationInitializer {
 
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
-        ctx.register(WebAppConfig.class, SoapConfig.class);
+        ctx.register(WebAppConfig.class, SoapConfig.class, SecurityConfig.class);
 
         servletContext.addListener(new ContextLoaderListener(ctx));
 
@@ -34,5 +34,4 @@ public class Initializer implements WebApplicationInitializer {
         servlet1.addMapping("/soap/*");
         servlet1.setLoadOnStartup(1);
     }
-
 }

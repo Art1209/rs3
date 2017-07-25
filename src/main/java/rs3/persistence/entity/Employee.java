@@ -2,12 +2,14 @@ package rs3.persistence.entity;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import rs3.tools.customObjectSerializer.CustomObjectDepartmentSerializer;
+import rs3.tools.customObjectSerializer.DepartmentXmlAdapter;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.Serializable;
 
-@XmlRootElement
+@XmlRootElement(name = "employee")
 @Entity
 @Table(name="employee")
 public class Employee implements Serializable{
@@ -39,10 +41,13 @@ public class Employee implements Serializable{
         this.employeeName = name;
     }
 
+
     @JsonSerialize(using= CustomObjectDepartmentSerializer.class)
     @ManyToOne
     @JoinColumn(name="department", nullable = false)
     private Department department;
+
+    @XmlJavaTypeAdapter(value = DepartmentXmlAdapter.class) // Чтобы остановить рекурсию при выводе связанных классов в xml
     public Department getDepartment() {
         return department;
     }

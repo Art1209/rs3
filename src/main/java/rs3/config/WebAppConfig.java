@@ -56,8 +56,6 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         return tmp;
     }
 
-
-
 //
 //    @Bean
 //    public DataSource dataSource() {

@@ -6,19 +6,19 @@ import rs3.tools.EntityUtils;
 import rs3.tools.customObjectSerializer.CustomObjectEmployeeListSerializer;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement
+@XmlRootElement(name = "department")
 @Entity
 @Table(name="department")
 public class Department implements Serializable{
 
     @Id
-//    @GeneratedValue(generator = "increment")
-//    @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "department_id", length = 6, nullable = false)
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
@@ -47,9 +47,14 @@ public class Department implements Serializable{
         this.avgSalary = avgSalary;
     }
 
+
     @JsonSerialize(using= CustomObjectEmployeeListSerializer.class)
     @OneToMany(targetEntity=Employee.class, mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Employee> employeesList=new ArrayList<>();
+
+    @XmlElementWrapper(name = "employees")
+    @XmlElement(name = "employee")
+//    @XmlJavaTypeAdapter(value = EmployeesListXmlAdapter.class) // Чтобы выводить список в едином корневоом элементе
     public List<Employee> getEmployeesList() {
         return employeesList;
     }

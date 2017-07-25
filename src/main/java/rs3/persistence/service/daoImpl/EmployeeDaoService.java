@@ -14,7 +14,7 @@ public class EmployeeDaoService implements EmployeeService{
     private EmployeeDaoInterface employeeDAO;
 
     @Autowired(required = true)
-    public void setDepartmentDAO(EmployeeDaoInterface employeeDAO) {
+    public void setEmployeeDAO(EmployeeDaoInterface employeeDAO) {
         this.employeeDAO = employeeDAO;
     }
 

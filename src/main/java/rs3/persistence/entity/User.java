@@ -1,18 +1,20 @@
 package rs3.persistence.entity;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import rs3.tools.customObjectSerializer.CustomObjectRoleListSerializer;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @XmlRootElement
 @Entity
 @Table(name = "user")
 public class User implements Serializable{
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", length = 6, nullable = false)
     private Long id;
 
@@ -24,6 +26,10 @@ public class User implements Serializable{
 
     @Column(name = "password")
     private String password;
+
+    @JsonSerialize(using= CustomObjectRoleListSerializer.class)
+    @OneToMany(targetEntity=Role.class, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    private List<Role> rolesList=new ArrayList<>();
 
     public User(String login, String password) {
         this.login = login;
